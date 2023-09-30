@@ -52,6 +52,14 @@
       font-size: 24px;
       cursor: pointer;
     }
+
+    .carousel-control-prev {
+      float: left;
+    }
+
+    .carousel-control-next {
+      float: right;
+    }
   </style>
 </head>
 
@@ -180,9 +188,14 @@
           alt="Slide 4">
       </div>
       <div class="carousel-item">
-        <img src="https://www.adorama.com/alc/wp-content/uploads/2019/03/grand-teton-nationa-park-nathan-lee-allen-opportunity.jpg"
+        <img
+          src="https://www.adorama.com/alc/wp-content/uploads/2019/03/grand-teton-nationa-park-nathan-lee-allen-opportunity.jpg"
           alt="Slide 5">
       </div>
+    </div>
+    <div class="carousel-controls">
+      <button onclick="prevSlide()" class="carousel-control-prev">&#10094;</button>
+      <button onclick="nextSlide()" class="carousel-control-next">&#10095;</button>
     </div>
   </section>
   <section id="about" class="about sec-pad">
@@ -364,7 +377,6 @@
         </div>
       </div>
 
-      <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
       <div class="main-footer__lower">
         &copy; Copyright 2023. Made by Anon
         <a rel="noreferrer" target="_blank" href=" https://google.com"> </a>
@@ -398,6 +410,12 @@
     function prevSlide() {
       showSlide(currentIndex - 1);
     }
+
+    const prevButton = document.querySelector('.carousel-control-prev');
+    const nextButton = document.querySelector('.carousel-control-next');
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
 
     setInterval(nextSlide, 3000);
   </script>
