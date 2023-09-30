@@ -386,66 +386,62 @@
 
   <script src="./index.js"></script>
   <script>
-    const carousel = document.getElementById('carousel');
-    const carouselInner = carousel.querySelector('.carousel-inner');
-    const carouselItems = carousel.querySelectorAll('.carousel-item');
-    const slideWidth = carouselItems[0].offsetWidth;
-    let currentIndex = 0;
-    let intervalId = null;
-    let isTransitioning = false;
+  const carousel = document.getElementById('carousel');
+  const carouselInner = carousel.querySelector('.carousel-inner');
+  const carouselItems = carousel.querySelectorAll('.carousel-item');
+  const slideWidth = carouselItems[0].offsetWidth;
+  let currentIndex = 0;
+  let intervalId = null; // Store the interval ID
+  let isTransitioning = false; // Flag to track slide transition
 
-    function showSlide(index) {
-      if (index < 0) {
-        index = carouselItems.length - 1;
-      } else if (index >= carouselItems.length) {
-        index = 0;
-      }
-      currentIndex = index;
-      const translateX = -index * slideWidth;
-      carouselInner.style.transform = `translateX(${translateX}px)`;
+  function showSlide(index) {
+    if (index < 0) {
+      index = carouselItems.length - 1;
+    } else if (index >= carouselItems.length) {
+      index = 0;
     }
+    currentIndex = index;
+    const translateX = -index * slideWidth;
+    carouselInner.style.transform = `translateX(${translateX}px)`;
+  }
 
-    function nextSlide() {
-      if (!isTransitioning) {
-        showSlide(currentIndex + 1);
-        startAutoSlide();
-      }
+  function nextSlide() {
+    if (!isTransitioning) {
+      showSlide(currentIndex + 1);
     }
+  }
 
-    function prevSlide() {
-      if (!isTransitioning) {
-        showSlide(currentIndex - 1);
-        startAutoSlide();
-      }
+  function prevSlide() {
+    if (!isTransitioning) {
+      showSlide(currentIndex - 1);
     }
+  }
 
-    const prevButton = document.querySelector('.carousel-control-prev');
-    const nextButton = document.querySelector('.carousel-control-next');
+  const prevButton = document.querySelector('.carousel-control-prev');
+  const nextButton = document.querySelector('.carousel-control-next');
 
-    prevButton.addEventListener('click', () => {
-      clearInterval(intervalId);
-      isTransitioning = true;
-      prevSlide();
-      setTimeout(() => {
-        isTransitioning = false;
-      }, 500);
-    });
+  prevButton.addEventListener('click', () => {
+    isTransitioning = true; // Set the flag
+    prevSlide();
+    setTimeout(() => {
+      isTransitioning = false; // Reset the flag
+    }, 500); // Adjust the timeout duration as needed
+  });
 
-    nextButton.addEventListener('click', () => {
-      clearInterval(intervalId);
-      isTransitioning = true;
-      nextSlide();
-      setTimeout(() => {
-        isTransitioning = false;
-      }, 500);
-    });
+  nextButton.addEventListener('click', () => {
+    isTransitioning = true; // Set the flag
+    nextSlide();
+    setTimeout(() => {
+      isTransitioning = false; // Reset the flag
+    }, 500); // Adjust the timeout duration as needed
+  });
 
-    function startAutoSlide() {
-      clearInterval(intervalId);
-      intervalId = setInterval(nextSlide, 3000);
-    }
+  // Initialize the interval for automatic sliding
+  function startAutoSlide() {
+    intervalId = setInterval(nextSlide, 3000);
+  }
 
-    startAutoSlide();
+  startAutoSlide(); // Start automatic sliding initially
   </script>
 </body>
 
