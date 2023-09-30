@@ -391,6 +391,8 @@
     const carouselItems = carousel.querySelectorAll('.carousel-item');
     const slideWidth = carouselItems[0].offsetWidth;
     let currentIndex = 0;
+    let intervalId = null;
+    let isTransitioning = false;
 
     function showSlide(index) {
       if (index < 0) {
@@ -404,20 +406,46 @@
     }
 
     function nextSlide() {
-      showSlide(currentIndex + 1);
+      if (!isTransitioning) {
+        showSlide(currentIndex + 1);
+        startAutoSlide();
+      }
     }
 
     function prevSlide() {
-      showSlide(currentIndex - 1);
+      if (!isTransitioning) {
+        showSlide(currentIndex - 1);
+        startAutoSlide();
+      }
     }
 
     const prevButton = document.querySelector('.carousel-control-prev');
     const nextButton = document.querySelector('.carousel-control-next');
 
-    prevButton.addEventListener('click', prevSlide);
-    nextButton.addEventListener('click', nextSlide);
+    prevButton.addEventListener('click', () => {
+      clearInterval(intervalId);
+      isTransitioning = true;
+      prevSlide();
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 500);
+    });
 
-    setInterval(nextSlide, 3000);
+    nextButton.addEventListener('click', () => {
+      clearInterval(intervalId);
+      isTransitioning = true;
+      nextSlide();
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 500);
+    });
+
+    function startAutoSlide() {
+      clearInterval(intervalId);
+      intervalId = setInterval(nextSlide, 3000);
+    }
+
+    startAutoSlide();
   </script>
 </body>
 
