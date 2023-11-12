@@ -1,0 +1,127 @@
+.common-styles,
+.red-mode,
+.green-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-size: 400% 400%;
+  color: white;
+  animation-delay: 0s;
+}
+
+.red-mode {
+  background-color: #c70039;
+}
+
+.green-mode {
+  background-color: #007f00;
+  /* background: linear-gradient(45deg, #007f00, #004c00); */
+}
+
+#timer {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  background-color: #38b000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+#start,
+#reset {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#reset {
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+
+button {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 5px;
+}
+
+button.button-red-mode {
+  background-color: #900c3f;
+  border: 1px solid #ff3e3e;
+}
+
+button.button-green-mode {
+  background-color: #38b000;
+  border: 1px solid #007f00;
+}
+
+button:hover.button-red-mode {
+  background-color: #ff3e3e;
+  outline: none !important;
+}
+
+button:hover.button-green-mode {
+  background-color: #007f00;
+  outline: none !important;
+}
+
+/* Input styles */
+
+.interval input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  max-width: 40px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+}
+
+.interval input[type="number"]:focus-visible {
+  outline: none;
+  color: #fff;
+}
+
+.interval input[type="number"]:focus-visible.input-red-mode {
+  background-color: #900c3f;
+  border: 1px solid #ff3e3e;
+  outline: none;
+  color: #fff;
+}
+
+.interval input[type="number"]:focus-visible.input-green-mode {
+  background-color: #38b000;
+  border: 1px solid #007f00;
+  outline: none;
+  color: #fff;
+}
+
+input[type="number"].input-red-mode {
+  background-color: #900c3f;
+  border: 1px solid #ff3e3e;
+}
+
+input[type="number"].input-green-mode {
+  background-color: #38b000;
+  border: 1px solid #007f00;
+}

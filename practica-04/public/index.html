@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pomodoro App</title>
+  </head>
+  <body class="common-styles red-mode">
+    <div id="status">Focus</div>
+    <div id="timer">25:00</div>
+    <div class="interval">
+      <input
+        class="input-red-mode"
+        type="number"
+        id="mins"
+        value="25"
+        min="0"
+      />
+      <span><b>:</b></span>
+      <input
+        class="input-red-mode"
+        type="number"
+        id="secs"
+        value="00"
+        min="0"
+        max="59"
+      />
+    </div>
+    <button id="start" class="button-red-mode">Start</button>
+    <button id="reset" class="button-red-mode">Reset</button>
+    <blockquote id="blockquote" hidden>
+      <em><p id="quote">This is a short quotation.</p></em>
+      <footer id="author">- Author</footer>
+    </blockquote>
+    <script src="script.js"></script>
+  </body>
+</html>
