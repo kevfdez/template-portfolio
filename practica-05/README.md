@@ -1,5 +1,4 @@
-![Screenshot 2023-11-13 at 02-53-14 Laravel](https://github.com/kevfdez/template-portfolio/assets/70961354/665de44a-2d63-420a-991f-a438ed7d8078)
-![Screenshot 2023-11-13 at 02-54-29 Laravel](https://github.com/kevfdez/template-portfolio/assets/70961354/2fc98190-4d4e-4e4d-a457-8ab334a4847b)
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -94,3 +93,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ### Serve application
 
 - `php artisan serve`
+
+### Jetstream auth routes
+- Register
+  > ![Screenshot 2023-11-13 at 02-53-14 Laravel](https://github.com/kevfdez/template-portfolio/assets/70961354/665de44a-2d63-420a-991f-a438ed7d8078)
+
+- Login
+  > ![Screenshot 2023-11-13 at 02-54-29 Laravel](https://github.com/kevfdez/template-portfolio/assets/70961354/2fc98190-4d4e-4e4d-a457-8ab334a4847b)
+
+- Home page
+  > ![image](https://github.com/kevfdez/template-portfolio/assets/70961354/b7b7a2b4-a9e8-48a1-843f-388581e6ead3)
