@@ -71,6 +71,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ### Download jetstream
 
+- `composer require laravel/jetstream`
+
+### Install livewire extension
+
 - `php artisan jetstream:install livewire`
 
 ### Create database.sqlite file
