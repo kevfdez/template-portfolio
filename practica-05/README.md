@@ -62,3 +62,29 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Enable jetsteam authentication(register & login routes) | practice 5
+
+### Create project
+
+- `composer create-project laravel/laravel:^8.0 <project_name>`
+
+### Download jetstream
+
+- `php artisan jetstream:install livewire`
+
+### Create database.sqlite file
+
+- Inside `<project_name>/database/` create file `database.sqlite`
+
+### Migrate database
+
+- `php artisan migrate`
+
+### Compile assets
+
+- `npm install && npm run dev`
+
+### Serve application
+
+- `php artisan serve`
